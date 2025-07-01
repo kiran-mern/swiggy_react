@@ -1,0 +1,24 @@
+{
+  "name": "swiggy-react",
+  "version": "1.0.0",
+  "scripts": {
+    "start":"npx parcel index.html",
+    "build":"npx build index.html",
+    "test": "jest"
+  },
+  "author": "Kiran",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist": [
+     "last 2 version"
+  ]
+   
+  
+}
