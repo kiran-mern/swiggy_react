@@ -19,8 +19,8 @@ const Body = () => {
 
     const json = await data.json();
     // console.log(json.data.cards, "aaa");
-    setListOfRestraunt(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-    setFilteredRestraunt(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    setListOfRestraunt(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+    setFilteredRestraunt(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
 
   };
 
