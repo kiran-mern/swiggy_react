@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import { BrowserRouter,Routes,Route ,Outlet} from "react-router-dom";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 
 const AppLayout = () => {
@@ -29,6 +30,7 @@ root.render(
              <Route index element={<Body/>}/>
             <Route  path='/about' element={<About/>} />
             <Route path='/contact' element={<Contact/> }/>
+            <Route path='/restaurant/:resId' element={<RestaurantMenu/>}/>
             <Route path="*" element={<Error/>}/>
 
          </Route>
