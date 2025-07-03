@@ -19,8 +19,11 @@ const Body = () => {
 
     const json = await data.json();
     console.log(json.data, "aaa");
-    setListOfRestraunt(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    setFilteredRestraunt(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    const homeCards=json?.data?.cards || []
+    const findCards=homeCards.find((cards)=>cards.card.card.gridElements.infoWithStyle.restaurants)
+    // const displayCard=findCards.card.card,gridElements.infoWithStyle.restaurants
+    setListOfRestraunt(findCards.card.card.gridElements.infoWithStyle.restaurants);
+    setFilteredRestraunt(findCards.card.card.gridElements.infoWithStyle.restaurants);
 
   };
 
