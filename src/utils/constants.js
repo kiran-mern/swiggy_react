@@ -11,6 +11,8 @@ export const MENU_API=
 export const HOME_URL=
 "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
+export const CATEGORY_URL=
+"type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
 
 
 
