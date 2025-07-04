@@ -28,15 +28,18 @@ const RestaurantMenu = () => {
   const itemCards = itemCardSection?.card?.card?.itemCards || [];
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
+    <div className=" px-96">
+        <div className="px-56 pt-16 bg-gray-100">
+            <h1>{name}</h1>
       <p>
         {cuisines.join(",")} - {costForTwoMessage}
       </p>
-      <h2>Menu</h2>
-      <ul>
+
+        </div>
+      
+      <ul  className="">
         {itemCards.map((item) => (
-          <li key={item.card.info.id}>
+          <li className="bg-gray-50 border border-solid m-4 p-4 items-center w-96 " key={item.card.info.id}>
             {item.card.info.name} - {item.card.info.price / 100}
           </li>
         ))}

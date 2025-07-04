@@ -9,6 +9,7 @@ import { BrowserRouter,Routes,Route ,Outlet} from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 
+
 const AppLayout = () => {
   return (
     <div className="app">
@@ -22,20 +23,17 @@ const AppLayout = () => {
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<AppLayout />);
 root.render(
   <BrowserRouter>
       <Routes>
           <Route path="/" element={<AppLayout/>} >
              <Route index element={<Body/>}/>
-            <Route  path='/about' element={<About/>} />
+            <Route  path='/about'  element={<About/>} />
             <Route path='/contact' element={<Contact/> }/>
             <Route path='/restaurant/:resId' element={<RestaurantMenu/>}/>
             <Route path="*" element={<Error/>}/>
 
          </Route>
-
-        
 
       </Routes>
   
