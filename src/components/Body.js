@@ -1,9 +1,10 @@
 import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useBodyMenu from "../utils/useBodyMenu";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const { listOfRestraunt, filteredRestraunt, setFilteredRestraunt } =useBodyMenu();
@@ -11,6 +12,9 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const RestaurantPromotedCard=withPromotedLabel(RestaurantCard);
+
+  const {loggedInUser,setName}=useContext(UserContext)
+  
   
 
   const onlineStatus=useOnlineStatus()
@@ -58,6 +62,15 @@ const Body = () => {
         </button>
 
         </div>
+
+        <label> Username:</label>
+        <input  type="text"
+        className="border border-black border-solid p-2"
+        value={loggedInUser}
+
+
+        onChange={(e)=>setName(e.target.value)}
+        />
        
       </div>
       <div className="flex flex-wrap">

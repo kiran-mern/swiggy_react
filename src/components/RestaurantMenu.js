@@ -8,6 +8,8 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
     const { resId } = useParams();
 
+    const[showIndex,setShowIndex]=useState(null)
+
   const resInfo=useRestaurantMenu(resId)
 
  
@@ -44,22 +46,16 @@ console.log(categories,'abcd');
         {cuisines.join(",")} - {costForTwoMessage}
       </p>
 
-      {categories.map((category)=>(
-        <RestaurantCategory  key={category?.card?.card?.categoryId} data={category?.card?.card}/>
+      {categories.map((category,index)=>(
+        <RestaurantCategory  key={category?.card?.card?.categoryId} 
+        data={category?.card?.card}
+        showItem={index===showIndex ? true:false }
+        setShowIndex={()=>setShowIndex(showIndex===index ? null :index)}
+        />
 
       ))}
 
 
-
-      
-      {/* <ul  className="">
-        {itemCards.map((item) => (
-          <li className="bg-gray-50 border border-solid m-4 p-4 items-center w-96 " key={item.card.info.id}>
-            {item.card.info.name} - {item.card.info.price / 100}
-          </li>
-        ))}
-        
-      </ul> */}
     </div>
   );
 };

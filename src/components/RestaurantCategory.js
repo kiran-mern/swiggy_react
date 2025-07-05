@@ -2,12 +2,11 @@ import { useState } from "react";
 
 import ItemList from "./ItemList";
 
-const RestaurantCategory=({data})=>{
+const RestaurantCategory=({data,showItem,setShowIndex})=>{
 
-    const[isOpen,setIsOpen]=useState(false);
 
     const handleClick=()=>{
-        setIsOpen(!isOpen)
+        setShowIndex()
     }
     
     return(
@@ -21,7 +20,7 @@ const RestaurantCategory=({data})=>{
                     <span> ⬇️</span>
                     </div> 
             </div>
-          {isOpen &&  <ItemList items={data.itemCards}/> } 
+          {showItem &&  <ItemList items={data.itemCards}/> } 
         </div>
     )
 
