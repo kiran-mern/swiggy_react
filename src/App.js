@@ -5,9 +5,14 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import Login from "./components/user/Login";
 import { BrowserRouter,Routes,Route ,Outlet} from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
+import SignUp from "./components/user/Signup";
 
 
 
@@ -23,6 +28,7 @@ const AppLayout = () => {
   },[])
 
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:name, setName}}>
           <div className="app">
       <Header />
@@ -31,7 +37,7 @@ const AppLayout = () => {
     </div>
     
   </UserContext.Provider>
-
+    </Provider>
   );
 };
 
@@ -47,6 +53,9 @@ root.render(
             <Route  path='/about'  element={<About/>} />
             <Route path='/contact' element={<Contact/> }/>
             <Route path='/restaurant/:resId' element={<RestaurantMenu/>}/>
+            <Route path='/cart' element={<Cart/>} />
+            <Route path="/login" element={<Login/>}/>
+            <Route path='/signup' element={<SignUp/>}/>
             <Route path="*" element={<Error/>}/>
 
          </Route>
