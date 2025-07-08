@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUp = () => {
+const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center  bg-slate-400">
       <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
@@ -40,4 +40,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
