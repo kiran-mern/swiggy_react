@@ -16,9 +16,7 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <Shimmer />;
   const { name, cuisines, costForTwoMessage } = resInfo.cards[2].card.card.info;
-  // const{name,cuisi}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[3].itemCards;
-
-  // const{itemCards}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card
+  
 
   const regularCards =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
@@ -32,7 +30,6 @@ const RestaurantMenu = () => {
 
   // Get the itemCards from that section
   const itemCards = itemCardSection?.card?.card?.itemCards || [];
-  // console.log(regularCards);
   
 
   const categories=regularCards?.filter((c)=>c.card?.card?.["@type"]===CATEGORY_URL);

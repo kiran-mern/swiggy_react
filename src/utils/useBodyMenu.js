@@ -22,7 +22,6 @@ const useBodyMenu=()=>{
         const restaurant=findCards?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setListOfRestraunt(restaurant)
         setFilteredRestraunt(restaurant);
-        // setListOfRestraunt(json)
 
     }
     return {listOfRestraunt,filteredRestraunt,setFilteredRestraunt}

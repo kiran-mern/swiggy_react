@@ -1,14 +1,12 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState,useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
-import { loggedInData } from "../utils/localStorage";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const [btnName, setBtnName] = useState("Login");
   const navigate=useNavigate()
 
   
@@ -51,14 +49,6 @@ const user=loggedInUser
             <Link to='/cart' > 🛒 {cartItems.length} </Link>
            
             </li>
-          {/* <button
-            className="login bg-white-100 "
-            onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
-          >
-            {btnName}
-          </button> */}
           {user ? (
                 <li className="px-4 underline font-bold cursor-pointer"
                 onClick={handleLogout}
