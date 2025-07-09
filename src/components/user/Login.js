@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import UserContext from '../../utils/UserContext';
+import UserContext from '../../context/userContext';
 
 const Login = () => {
   const navigate= useNavigate()

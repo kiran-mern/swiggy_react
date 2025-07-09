@@ -1,5 +1,5 @@
 import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useBodyMenu from "../utils/useBodyMenu";

@@ -1,3 +1,5 @@
+
+
 const About = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-yellow-100 to-pink-100 p-8">

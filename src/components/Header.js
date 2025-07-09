@@ -2,7 +2,7 @@ import { LOGO_URL } from "../utils/constants";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+import UserContext from "../context/userContext";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

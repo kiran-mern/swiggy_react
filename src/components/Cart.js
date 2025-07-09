@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import ItemList from "./ItemList"
-import { removeItem } from "../utils/cartSlice"
+import { removeItem } from "../redux/cartSlice"
 
 const Cart=()=>{
     const cartItems=useSelector((store)=>store.cart.items)
