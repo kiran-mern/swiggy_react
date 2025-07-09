@@ -17,12 +17,12 @@ const handleSubmit=(e)=>{
 
     localStorage.setItem('user',JSON.stringify(userData));
 
+    localStorage.setItem('registeredUser',JSON.stringify(userData));
+
+
     console.log("user saved",userData);
     navigate('/');
     
-
-
-
 }
 
   return (

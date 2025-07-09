@@ -17,19 +17,21 @@ import SignUp from "./components/user/Signup";
 
 
 const AppLayout = () => {
-  const[name,setName]=useState()
+  const[loggedInUser,setLoggedInUser]=useState(null)
 
   useEffect(()=>{
-
-    const data={
-      name:'kiran'
+    const storedUser=JSON.parse(localStorage.getItem('user'))
+    if(storedUser){
+      setLoggedInUser(storedUser)
     }
-    setName(data.name)
+
+   
   },[])
+  
 
   return (
     <Provider store={appStore}>
-    <UserContext.Provider value={{loggedInUser:name, setName}}>
+    <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
           <div className="app">
       <Header />
       <Outlet/>

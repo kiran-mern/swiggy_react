@@ -63,14 +63,14 @@ const Body = () => {
 
         </div>
 
-        <label> Username:</label>
+        {/* <label> Username:</label>
         <input  type="text"
         className="border border-black border-solid p-2"
         value={loggedInUser}
 
 
         onChange={(e)=>setName(e.target.value)}
-        />
+        /> */}
        
       </div>
       <div className="flex flex-wrap">

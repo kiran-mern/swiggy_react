@@ -4,11 +4,25 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { loggedInData } from "../utils/localStorage";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const navigate=useNavigate()
 
-  const data=useContext(UserContext)
+  
+
+  const handleLogout=()=>{
+    localStorage.removeItem('user')
+    navigate('/login')
+  }
+  
+
+  const {loggedInUser}=useContext(UserContext)
+  
+const user=loggedInUser
+  console.log(user,'anyone');
   const cartItems=useSelector((store)=>store.cart.items)
   console.log(cartItems);
   
@@ -45,8 +59,13 @@ const Header = () => {
           >
             {btnName}
           </button> */}
-          <Link to={'/login'}>Login</Link>
-                <li className="px-4">{data.loggedInUser}</li>
+          {user ? (
+                <li className="px-4 underline font-bold cursor-pointer"
+                onClick={handleLogout}
+                
+                >👤{user.username}</li>)
+                :<Link to={'/login'}>Login</Link> } 
+         
 
         </ul>
       </div>
